@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    cursor: pointer;
+}
+body{
+    display: flex;
+    flex-direction: row;
+}
+#customers {
+    border-collapse: collapse; 
+    width: 40%;
+    margin: 100px;
+    margin-top: 50px;
+}
+td {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 15px;
+}
+td:hover{
+    background-color:#f7cbe3;
+}
+.condition{
+    background-color: #f7cbe3;
+}
+.select{
+    background-color: #f593c9;
+}
+
+#word{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+div{
+    padding: 5px;
+}
