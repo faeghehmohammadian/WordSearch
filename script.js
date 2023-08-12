@@ -5,44 +5,44 @@ var word=[];
 var worddiv=[];
 var startgame=false;
 
-function checkword(str){
-    for(let i=0;i<refword.length;i++){
-            if(str==refword[i]){
-                return true;
-            }
-    }return false;
-}
-
-letters.forEach((el) => {
-    el.addEventListener("mousedown", () => {
+letters.forEach((el)=>{
+    el.addEventListener('mousedown',()=>{
         word.push(el.textContent);
         worddiv.push(el);
         el.classList.add('condition');
         startgame=true;
     })
-    
-})
-letters.forEach((el) => {
-    el.addEventListener("mousemove", () => {
+});
+
+letters.forEach((el)=>{
+    el.addEventListener('mousemove',()=>{
         if(startgame && !word.includes(el.textContent)){
             word.push(el.textContent);
             worddiv.push(el);
             el.classList.add('condition');
         }
     })
-})
-letters.forEach((el) => {
-    el.addEventListener("mouseup", () => {
+});
+function checkword(str){
+    for(let i=0; i<refword.length;i++){
+        if (str==refword[i]){
+            return true;
+        }
+    }return false;
+}
+letters.forEach((el)=>{
+    el.addEventListener('mouseup',()=>{
         startgame=false;
-        checkword(word.join(''));
+        //checkword(word.join(''));
         if(checkword(word.join(''))){
             for(let i=0;i<worddiv.length;i++){
-                worddiv[i].setAttribute('class','select');
-        }
+                worddiv[i].setAttribute('class','select')
+            }
         }
         for(let i=0;i<worddiv.length;i++){
-            worddiv[i].classList.remove('condition');}
-        worddiv=[];
+            worddiv[i].classList.remove('condition');
+        }
         word=[];
+        worddiv=[];
     })
 })

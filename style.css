@@ -8,8 +8,10 @@
     cursor: pointer;
 }
 body{
+    width: 70vw;
     display: flex;
     flex-direction: row;
+    margin: auto;
 }
 #customers {
     border: 1px solid;
